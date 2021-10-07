@@ -18,7 +18,7 @@ python3 -m PyInstaller most_active_cookie.py
 python3 -m pytest most_active_cookie_test.py
 ```
 
-### Executing the code
+## Executing the code
 
 ### Using Executable
 1. Navigate to dist/most_active_cookie in terminal
