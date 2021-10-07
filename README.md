@@ -14,6 +14,7 @@ pip3 install pyinstaller
 ```bash
 python3 -m PyInstaller most_active_cookie.py
 ```
+When generating, make sure you put a CSV file in the executable directory.
 
 
 ## Running Test Cases

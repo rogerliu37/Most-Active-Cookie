@@ -5,6 +5,9 @@ from process.calculate_most_frequent import *
 """
 Test files that checks for mutliple log files and what the most frequent cookie is for their respective days in addition to error handling.
 """
+FILE_ONE = 'sample_cookies/test_file_one.csv'
+FILE_TWO = 'sample_cookies/test_file_two.csv'
+
 EXPECTED_FILE_NOT_FOUND_ERROR_MESSAGE = "You have entered an invalid file. Please try again..."
 EXPECTED_VALUE_ERROR_MESSAGE = "You have entered an invalid date. Please try again..."
 EXPECTED_TYPE_ERROR_MESSAGE = "You have entered an invalid cookie log. Please try again..."
@@ -24,40 +27,40 @@ EXPECTED_MOST_FREQUENT_COOKIES_TWO_DAY_TWO = ['5UAVanZf6UtGyKVS', 'SAZuXPGUrfbcn
 EXPECTED_MOST_FREQUENT_COOKIES_TWO_DAY_THREE = ['4sMM2LxV07bPJzwf', '4sMX2LTV07bPJzFf']
 
 def test_process_log_one():
-    actual = process_log('sample_cookies/test_file_one.csv')
+    actual = process_log(FILE_ONE)
     assert EXPECTED_TEST_FILE_ONE_LOG == actual
 
 def test_process_log_two():
-    actual = process_log('sample_cookies/test_file_two.csv')
+    actual = process_log(FILE_TWO)
     assert EXPECTED_TEST_FILE_TWO_LOG == actual
 
 def test_most_frequent_one():
-    log = process_log('sample_cookies/test_file_one.csv')
+    log = process_log(FILE_ONE)
     actual = calculate_most_frequent(log, '2018-12-09')
     assert EXPECTED_MOST_FREQUENT_COOKIES_ONE_DAY_ONE == actual
 
 def test_most_frequent_two():
-    log = process_log('sample_cookies/test_file_one.csv')
+    log = process_log(FILE_ONE)
     actual = calculate_most_frequent(log, '2018-12-08')
     assert EXPECTED_MOST_FREQUENT_COOKIES_ONE_DAY_TWO == actual
 
 def test_most_frequent_three():
-    log = process_log('sample_cookies/test_file_one.csv')
+    log = process_log(FILE_ONE)
     actual = calculate_most_frequent(log, '2018-12-07')
     assert EXPECTED_MOST_FREQUENT_COOKIES_ONE_DAY_THREE == actual
 
 def test_most_frequent_two_day_one():
-    log = process_log('sample_cookies/test_file_two.csv')
+    log = process_log(FILE_TWO)
     actual = calculate_most_frequent(log, '2018-12-09')
     assert EXPECTED_MOST_FREQUENT_COOKIES_TWO_DAY_ONE == actual
 
 def test_most_frequent_two_day_two():
-    log = process_log('sample_cookies/test_file_two.csv')
+    log = process_log(FILE_TWO)
     actual = calculate_most_frequent(log, '2018-12-08')
     assert EXPECTED_MOST_FREQUENT_COOKIES_TWO_DAY_TWO == actual
 
 def test_most_frequent_two_day_three():
-    log = process_log('sample_cookies/test_file_two.csv')
+    log = process_log(FILE_TWO)
     actual = calculate_most_frequent(log, '2018-12-07')
     assert EXPECTED_MOST_FREQUENT_COOKIES_TWO_DAY_THREE == actual
 
@@ -66,6 +69,6 @@ def test_invalid_csv():
     assert EXPECTED_FILE_NOT_FOUND_ERROR_MESSAGE == actual
 
 def test_invalid_date():
-    log = process_log('sample_cookies/test_file_one.csv')
+    log = process_log(FILE_ONE)
     actual = calculate_most_frequent(log, '00-00-00')
     assert EXPECTED_VALUE_ERROR_MESSAGE == actual
