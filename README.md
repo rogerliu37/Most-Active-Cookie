@@ -10,7 +10,11 @@ pip3 install pytest
 pip3 install pyinstaller 
 ```
 ## Using PyInstaller to Generate an Executable
+
+```bash
 python3 -m PyInstaller most_active_cookie.py
+```
+
 
 ## Running Test Cases
 
