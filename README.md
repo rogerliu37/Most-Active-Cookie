@@ -38,3 +38,9 @@ python3 -m pytest most_active_cookie_test.py
 ```bash
 python3 most_active_cookie.py cookie_log.csv -d 2018-12-09
 ```
+
+## Solution Overview
+
+1. Process the CSV and calculate the frequency of each cookie per day. 
+2. Calculate the most frequent cookie on a given day.
+3. Error handling for edge cases.
